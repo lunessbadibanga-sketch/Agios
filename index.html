@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agios — Récupère les frais bancaires prélevés à tort</title>
+<meta name="description" content="Dépose ton relevé : on repère tes frais, on les compare aux plafonds légaux et on prépare ton courrier de réclamation. Commencer est gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Agios — Récupère les frais bancaires prélevés à tort">
+<meta property="og:description" content="Tes frais bancaires sont plafonnés par la loi. Vérifie en 2 minutes si ta banque a dépassé les limites.">
+<meta name="theme-color" content="#0F3D2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--vert:#0F3D2E;--vert2:#154c39;--moutarde:#F2B134;--creme:#FAF6EE;--encre:#17201C;--gris:#5B665F;--trait:#E4DCCB}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--creme);color:var(--encre);font:400 18px/1.6 "Source Sans 3",system-ui,sans-serif;padding-bottom:84px;-webkit-text-size-adjust:100%}
+h1,h2,h3,.chiffre,.logo{font-family:Fraunces,Georgia,serif;font-weight:800;line-height:1.12;letter-spacing:-.01em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.top{background:var(--vert);color:var(--creme)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-size:24px}
+.top a.lien{display:none;color:var(--creme);text-decoration:none;font-weight:600;font-size:16px}
+.btn{display:block;text-align:center;background:var(--moutarde);color:var(--encre);font-weight:600;font-size:19px;text-decoration:none;padding:16px 24px;border-radius:8px;min-height:56px}
+.btn:hover{background:#f7c25a}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--moutarde);outline-offset:3px}
+.hero{background:var(--vert);color:var(--creme);padding:36px 0 120px}
+.hero .wrap{display:grid;gap:34px}
+h1{font-size:clamp(34px,8.5vw,56px)}
+.hero p.lead{margin-top:18px;font-size:19px;color:#E3EBE5;max-width:30em}
+.hero .btn{margin-top:28px}
+.garanties{list-style:none;padding:0;margin-top:20px;display:grid;gap:6px;font-size:16px;color:#C9D6CE}
+.garanties li::before{content:"";display:inline-block;width:9px;height:9px;background:var(--moutarde);margin-right:10px;border-radius:2px}
+.carte{background:#fff;color:var(--encre);border-radius:10px;padding:20px;box-shadow:0 20px 40px -20px rgba(0,0,0,.45);margin-top:-8px}
+.carte h2{font-size:18px;font-family:"Source Sans 3",sans-serif;font-weight:600;letter-spacing:0;color:var(--gris);margin-bottom:10px}
+.ligne{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--trait);font-size:16px}
+mark{background:linear-gradient(transparent 55%,var(--moutarde) 55%);color:inherit;padding:0 2px}
+.depasse{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--encre);margin-top:10px;padding-top:12px;font-weight:600}
+.chiffre{font-size:38px;color:var(--vert)}
+.petit{font-size:14px;color:var(--gris);margin-top:10px}
+section{padding:52px 0;border-bottom:1px solid var(--trait)}
+h2.titre{font-size:clamp(28px,7vw,40px);margin-bottom:16px}
+.etapes{list-style:none;padding:0;display:grid;gap:26px;margin-top:26px}
+.etapes li{display:grid;grid-template-columns:44px 1fr;gap:14px}
+.n{width:44px;height:44px;border-radius:50%;background:var(--vert);color:var(--creme);display:grid;place-items:center;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:20px}
+.etapes h3{font-size:21px;margin-bottom:2px}
+.tab{width:100%;border-collapse:collapse;margin-top:20px;background:#fff;border:1px solid var(--trait);font-size:17px}
+.tab th,.tab td{padding:14px;text-align:left;border-bottom:1px solid var(--trait)}
+.tab th{background:var(--vert);color:var(--creme);font-weight:600}
+.tab td:not(:first-child){font-weight:600}
+details{border-bottom:1px solid var(--trait);padding:16px 0}
+summary{font-weight:600;cursor:pointer;list-style:none;padding-right:24px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;font-size:24px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:10px;color:var(--gris)}
+.fin{background:var(--vert);color:var(--creme);border:0;text-align:center}
+.fin .btn{max-width:420px;margin:24px auto 0}
+.fin p{max-width:30em;margin:0 auto;color:#E3EBE5}
+footer{padding:28px 0;font-size:14px;color:var(--gris)}
+.barre{position:fixed;left:0;right:0;bottom:0;background:var(--creme);border-top:1px solid var(--trait);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.barre .btn{max-width:600px;margin:0 auto}
+@media(min-width:760px){
+ body{padding-bottom:0}.barre{display:none}
+ .top a.lien{display:block}
+ .hero{padding:72px 0 140px}
+ .hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}
+ .hero .btn{display:inline-block}
+ .etapes{grid-template-columns:repeat(3,1fr)}
+ .etapes li{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="logo">Agios</div><a class="lien" href="#plafonds">Les plafonds légaux</a></div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Ta banque t'a peut-être prélevé trop de frais. Récupère-les.</h1>
+      <p class="lead">Dépose ton relevé : on repère chaque ligne de frais, on la compare aux plafonds fixés par la loi et on prépare ton courrier de réclamation.</p>
+      <a class="btn" href="#bientot">Commencer, c'est gratuit</a>
+      <ul class="garanties">
+        <li>2 minutes pour voir ce qui dépasse</li>
+        <li>Aucune carte bancaire demandée</li>
+        <li>Courrier prêt à envoyer à ton agence</li>
+      </ul>
+    </div>
+    <div class="carte" aria-label="Exemple d'analyse, à titre illustratif">
+      <h2>Exemple d'analyse, un mois</h2>
+      <div class="ligne"><span>10 commissions d'intervention</span><span>80,00 €</span></div>
+      <div class="ligne"><span>2 rejets de prélèvement</span><span>40,00 €</span></div>
+      <div class="ligne"><span>Option « alerte solde »</span><span>2,10 €</span></div>
+      <div class="depasse"><span>Frais du mois</span><span class="chiffre">122,10 €</span></div>
+      <p class="petit">Illustration chiffrée, pas un relevé réel. Ton analyse compare tes lignes aux plafonds.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2 class="titre">Comment ça marche</h2>
+    <p>Pas de formulaire interminable ni de démarche à inventer.</p>
+    <ol class="etapes">
+      <li><div class="n">1</div><div><h3>Tu déposes ton relevé</h3><p>On repère toutes les lignes de frais, même celles que tu n'avais jamais remarquées.</p></div></li>
+      <li><div class="n">2</div><div><h3>On compare aux plafonds</h3><p>Le total sur douze mois est mis en face des limites légales. Tu vois ce qui dépasse.</p></div></li>
+      <li><div class="n">3</div><div><h3>Tu envoies ton courrier</h3><p>Il est prêt, adressé à ton agence, avec les montants à rembourser. Tu suis ensuite ce que tu obtiens.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="plafonds">
+  <div class="wrap">
+    <h2 class="titre">Ce que la loi limite</h2>
+    <p>Les commissions d'intervention sont plafonnées. Au-delà, ta banque doit te rendre la différence.</p>
+    <table class="tab">
+      <thead><tr><th>Ta situation</th><th>Par opération</th><th>Par mois</th></tr></thead>
+      <tbody>
+        <tr><td>Cas général</td><td><mark>8 €</mark></td><td><mark>80 €</mark></td></tr>
+        <tr><td>Offre clientèle fragile</td><td><mark>4 €</mark></td><td><mark>20 €</mark></td></tr>
+      </tbody>
+    </table>
+    <p class="petit">Sources : Code monétaire et financier, Banque de France. Les règles peuvent évoluer ; l'analyse utilise les montants en vigueur.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="titre">Questions fréquentes</h2>
+    <details><summary>Est-ce que ça marche pour mon cas ?</summary><p>Si tu as eu des commissions d'intervention, des rejets ou des options facturées, l'analyse te dit précisément ce qui dépasse les plafonds. Si rien ne dépasse, tu le sais en quelques minutes.</p></details>
+    <details><summary>Combien de temps ça me prend ?</summary><p>Environ 2 minutes pour déposer ton relevé et voir le résultat. Il te reste ensuite à envoyer le courrier.</p></details>
+    <details><summary>Est-ce vraiment gratuit ?</summary><p>Commencer est gratuit, sans carte bancaire. Le courrier prêt à envoyer est payant, et tu vois le prix avant de payer.</p></details>
+  </div>
+</section>
+
+<section class="fin" id="bientot">
+  <div class="wrap">
+    <h2 class="titre">Le test gratuit ouvre très bientôt.</h2>
+    <p>Reviens dans quelques jours : tu pourras déposer ton relevé et voir tout de suite ce que ta banque t'a prélevé.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Agios. Service d'aide à la réclamation de frais bancaires. Il ne remplace pas un conseil juridique.</div></footer>
+<div class="barre"><a class="btn" href="#bientot">Commencer, c'est gratuit</a></div>
+</body>
+</html>
